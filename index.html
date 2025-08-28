@@ -64,17 +64,17 @@ nav button:hover {
   box-shadow: 0 0 10px #00ffe3;
   transform: scale(1.05);
 }
-/* Sections styles with added padding-top for space below header */
+/* Sections styles with margin-top to avoid overlap with fixed header */
 section {
   display: none;
   padding: 50px 20px;
-  padding-top: 120px; /* Added space to prevent overlap */
   max-width: 1000px;
   margin: 0 auto 30px;
   background: rgba(0,0,0,0.6);
   border-radius: 20px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   transition: opacity 0.3s ease;
+  margin-top: 100px; /* Add space below fixed header */
 }
 section.active {
   display: block;
