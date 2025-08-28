@@ -3,45 +3,38 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>CyberSecure: Your Online Safety & Security Hub</title>
-<!-- Google Fonts -->
+<title>Balance & Wellbeing: Navigating Your Digital Life</title>
+<!-- Google Fonts & Font Awesome -->
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
-<!-- Font Awesome for Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
 <style>
-/* Reset Styles */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-/* Body & Font */
 body {
   font-family: 'Orbitron', sans-serif;
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   color: #fff;
   line-height: 1.6;
   padding-top: 80px;
-  overflow-x: hidden;
 }
-
-/* Header & Navigation */
 header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0,0,0,0.8);
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   padding: 15px 20px;
   z-index: 999;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  flex-wrap: wrap;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
-
 header h1 {
   font-size: 1.8rem;
   color: #00ffe3;
@@ -49,14 +42,11 @@ header h1 {
   flex: 1;
   text-align: center;
 }
-
 nav {
   display: flex;
-  gap: 10px;
   flex-wrap: wrap;
-  justify-content: center;
+  gap: 10px;
 }
-
 nav button {
   background: transparent;
   border: 2px solid #00ffe3;
@@ -68,49 +58,33 @@ nav button {
   transition: all 0.3s;
   font-size: 1rem;
 }
-
 nav button:hover {
   background-color: #00ffe3;
   color: #000;
   box-shadow: 0 0 10px #00ffe3;
   transform: scale(1.05);
 }
-
 /* Sections */
 section {
   display: none;
   padding: 50px 20px;
   max-width: 1000px;
   margin: 0 auto 30px;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0,0,0,0.6);
   border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: opacity 0.3s ease;
 }
-
 section.active {
   display: block;
+  opacity: 1;
 }
-
 h2 {
   font-size: 2.5rem;
   color: #00ffe3;
   margin-bottom: 20px;
   text-align: center;
-  position: relative;
 }
-
-h2::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: #00ffe3;
-  margin: 10px auto 0;
-  border-radius: 2px;
-}
-
-/* Subheadings */
 h3 {
   font-size: 2rem;
   margin-top: 30px;
@@ -119,9 +93,8 @@ h3 {
   position: relative;
   padding-left: 10px;
 }
-
 h3::before {
-  content: "\uf023"; /* Font Awesome lock icon */
+  content: "\uf023"; /* lock icon */
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
   margin-right: 10px;
@@ -132,51 +105,40 @@ h3::before {
   top: 50%;
   transform: translateY(-50%);
 }
-
-/* Paragraphs & Text */
 p {
   font-size: 1.2rem;
   margin-bottom: 20px;
   line-height: 1.6;
 }
-
 ul {
   list-style: none;
-  padding: 0;
-  margin: 0 0 20px 20px;
+  padding-left: 20px;
+  margin-bottom: 20px;
 }
-
 li {
   margin-bottom: 10px;
   font-size: 1.1rem;
   position: relative;
-  padding-left: 25px;
 }
-
 li::before {
-  content: "\2022"; /* Bullet point */
+  content: "\2022"; /* bullet */
   color: #00ffe3;
   font-size: 1.5rem;
   position: absolute;
   left: 0;
   top: 0;
 }
-
-/* Images & Media */
 img {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   margin-bottom: 20px;
   transition: transform 0.3s;
 }
-
 img:hover {
   transform: scale(1.02);
 }
-
-/* Buttons & Interactive Elements */
 button {
   cursor: pointer;
   border: none;
@@ -189,16 +151,13 @@ button {
   margin-top: 15px;
   transition: all 0.3s;
 }
-
 button:hover {
   background-color: #00cccc;
-  box-shadow: 0 0 10px #00ffe3;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   transform: scale(1.05);
 }
-
-/* Footer Styles */
 footer {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0,0,0,0.8);
   text-align: center;
   padding: 20px;
   margin-top: 50px;
@@ -206,379 +165,124 @@ footer {
   color: #00ffe3;
   box-shadow: inset 0 0 20px #00ffe3;
 }
-
-/* Additional Layout & Responsiveness */
+/* Responsive */
 @media(max-width: 768px){
   header h1 {
     font-size: 1.5rem;
   }
   nav {
     flex-direction: column;
+    align-items: center;
   }
   section {
     padding: 30px 15px;
   }
-}
-
-/* Animations & Effects */
-.fade-in {
-  opacity: 0;
-  animation: fadeInAnimation 1s forwards;
-}
-
-@keyframes fadeInAnimation {
-  to {
-    opacity: 1;
-  }
-}
-
-/* FAQ Accordion Styles */
-.faq {
-  margin-top: 20px;
-}
-.faq-item {
-  background: rgba(255,255,255,0.1);
-  margin-bottom: 10px;
-  border-radius: 8px;
-  overflow: hidden;
-  transition: all 0.3s;
-}
-.faq-header {
-  padding: 15px;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.faq-header:hover {
-  background-color: rgba(255,255,255,0.2);
-}
-.faq-content {
-  padding: 15px;
-  display: none;
-  font-size: 1.1rem;
-}
-.faq-active .faq-content {
-  display: block;
-}
-
-/* Quiz Styles */
-.quiz-container {
-  margin-top: 30px;
-}
-.quiz-question {
-  font-size: 1.4rem;
-  margin-bottom: 15px;
-}
-.quiz-options {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.quiz-option {
-  background: rgba(255,255,255,0.1);
-  padding: 10px 15px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-.quiz-option:hover {
-  background-color: rgba(255,255,255,0.2);
-}
-.correct {
-  background-color: #4CAF50 !important;
-  color: #fff;
-}
-.incorrect {
-  background-color: #f44336 !important;
-  color: #fff;
-}
-
-/* Resource Cards */
-.resource-card {
-  background: rgba(255,255,255,0.1);
-  border-radius: 8px;
-  padding: 20px;
-  margin: 15px 0;
-  transition: all 0.3s;
-}
-.resource-card:hover {
-  background: rgba(255,255,255,0.2);
-}
-.resource-title {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: #fff;
-}
-.resource-link {
-  color: #00ffe3;
-  text-decoration: none;
-}
-.resource-link:hover {
-  text-decoration: underline;
-}
-
-/* Scroll-to-top Button */
-#scrollTopBtn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  display: none;
-  background: #00ffe3;
-  color: #000;
-  padding: 10px 15px;
-  border-radius: 50%;
-  font-size: 1.4rem;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  transition: all 0.3s;
-}
-#scrollTopBtn:hover {
-  background: #00cccc;
 }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>CyberSecure: Your Online Safety & Security Hub</h1>
+  <h1>Balance & Wellbeing: Navigating Your Digital Life</h1>
   <nav>
     <button data-section="home">Home</button>
-    <button data-section="security">Online Security</button>
-    <button data-section="privacy">Privacy Tips</button>
-    <button data-section="tools">Security Tools</button>
-    <button data-section="faq">FAQs</button>
-    <button data-section="quiz">Quiz</button>
-    <button data-section="resources">Resources</button>
-    <button data-section="reflections">Reflections</button>
+    <button data-section="feature">Feature Article</button>
+    <button data-section="advice">Advice Column</button>
+    <button data-section="creative">Creative Corner</button>
+    <button data-section="reflection">Personal Reflection</button>
   </nav>
 </header>
 
-<!-- Scroll to top Button -->
-<button id="scrollTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
-
 <!-- Sections -->
-<section id="home" class="active fade-in">
-  <h2>Welcome to Your Digital Defense</h2>
-  <p>In today's interconnected world, online safety and security are more important than ever. Whether you're browsing, chatting, or shopping, being aware of cyber threats helps you stay protected. Join us to learn how to defend your digital identity effectively!</p>
-  <p><strong>Team:</strong> Hassan, Adam, Mohammad</p>
+
+<!-- Page 1: Home -->
+<section id="home" class="active">
+  <h2>Welcome to Your Digital Balance</h2>
+  <p><strong>Group Members:</strong> Hassan, Adam, Mohammad</p>
+  <p>In our hyper-connected world, managing screen time and digital habits is crucial for maintaining mental and physical health. This site aims to help you find a healthy balance between online activities and offline well-being.</p>
   <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px;">
-    <img src="https://images.unsplash.com/photo-1611095564984-4e9b2a3d6f9b" alt="Digital Security" width="300" />
-    <img src="https://images.unsplash.com/photo-1617970506021-0f4ab9b644c6" alt="Privacy Icon" width="300" />
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Balanced Digital Life" width="300" />
+    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c" alt="Digital Wellbeing" width="300" />
   </div>
 </section>
 
-<section id="security" class="fade-in">
-  <h2>The Importance of Online Security</h2>
-  <p>Cyber threats are constantly evolving. Protect your digital life by understanding common risks and adopting best practices. Remember: security is an ongoing process, not a one-time setup.</p>
-  <ul>
-    <li><strong>Phishing:</strong> Fake emails or messages designed to steal information</li>
-    <li><strong>Malware:</strong> Malicious software that damages or steals data</li>
-    <li><strong>Data Breaches:</strong> Unauthorized access to personal or organizational data</li>
-    <li><strong>Social Engineering:</strong> Manipulating people into revealing confidential info</li>
-  </ul>
-  <p>Key practices include using strong passwords, enabling two-factor authentication, and keeping your devices updated.</p>
-  <img src="https://images.unsplash.com/photo-1624972368987-4b66fcb6f7e2" alt="Cybersecurity" />
+<!-- Page 2: Feature Article -->
+<section id="feature">
+  <h2>Why Managing Screen Time Matters</h2>
+  <p>Excessive screen time can negatively affect your sleep, mood, and productivity. According to the World Health Organization, children and teens should limit recreational screen time to ensure healthy development. Finding a balance helps improve focus, sleep quality, and mental health.</p>
+  <p>Research shows that teens who manage their screen time experience less anxiety and better sleep patterns (Source: CDC, 2022). Setting boundaries and taking digital detox breaks are effective strategies.</p>
+  <img src="https://images.unsplash.com/photo-1533419021864-0f7c7f0b7f7a" alt="Screen Time Stats" />
 </section>
 
-<section id="privacy" class="fade-in">
-  <h2>Protect Your Privacy Online</h2>
-  <p>Your privacy is your right. Learn how to control what information you share and with whom. Protect your personal data from being exploited by malicious actors or intrusive companies.</p>
-  <h3>Privacy Tips:</h3>
-  <ul>
-    <li>Regularly review social media privacy settings</li>
-    <li>Be cautious with sharing personal info publicly</li>
-    <li>Use pseudonyms or aliases when possible</li>
-    <li>Limit app permissions to only what is necessary</li>
-  </ul>
-  <img src="https://images.unsplash.com/photo-1549924231-f129b911e442" alt="Privacy" />
-</section>
-
-<section id="tools" class="fade-in">
-  <h2>Essential Security Tools</h2>
-  <p>Empower yourself with reliable tools to enhance your online safety:</p>
-  <div class="resource-card">
-    <div class="resource-title">Password Managers</div>
-    <p>Securely store and generate strong passwords. Examples: LastPass, 1Password, Bitwarden.</p>
-    <a href="https://bitwarden.com/" class="resource-link" target="_blank">Learn more</a>
+<!-- Page 3: Advice Column -->
+<section id="advice">
+  <h2>Ask the Wellbeing Wiz!</h2>
+  <div style="margin-bottom:20px;">
+    <h3>Q1: Dear Wellbeing Wiz, I spend 5 hours on TikTok every night and feel exhausted. How can I cut back without missing out?</h3>
+    <p>Hi! Try setting a timer or using app limits to control your usage. Find alternative activities like reading or exercising. Remember, moderation is key—enjoy your apps without overdoing it!</p>
   </div>
-  <div class="resource-card">
-    <div class="resource-title">VPNs (Virtual Private Networks)</div>
-    <p>Protect your connection and browse anonymously. Examples: NordVPN, ExpressVPN.</p>
-    <a href="https://nordvpn.com/" class="resource-link" target="_blank">Learn more</a>
+  <div style="margin-bottom:20px;">
+    <h3>Q2: Dear Wellbeing Wiz, I feel anxious when I don't check my phone. How can I reduce this dependency?</h3>
+    <p>Hello! Start by turning off non-essential notifications and setting specific times to check your phone. Practice mindfulness and engage in offline hobbies to build healthier habits.</p>
   </div>
-  <div class="resource-card">
-    <div class="resource-title">Antivirus Software</div>
-    <p>Detect and remove malware. Examples: Norton, Avast, Kaspersky.</p>
-    <a href="https://www.avast.com/" class="resource-link" target="_blank">Learn more</a>
-  </div>
-  <img src="https://images.unsplash.com/photo-1549924231-f129b911e442" alt="Security Tools" />
-</section>
-
-<section id="faq" class="fade-in">
-  <h2>Frequently Asked Questions</h2>
-  <div class="faq">
-    <div class="faq-item">
-      <div class="faq-header"><span>How can I tell if a message is a scam?</span><i class="fas fa-chevron-down"></i></div>
-      <div class="faq-content">
-        <p>Look for urgent language, suspicious links, and sender details. Always verify with trusted sources before clicking.</p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-header"><span>How do I make my social media private?</span><i class="fas fa-chevron-down"></i></div>
-      <div class="faq-content">
-        <p>Access your privacy settings on each platform, set your profile to private, and review your audience regularly.</p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-header"><span>What is two-factor authentication?</span><i class="fas fa-chevron-down"></i></div>
-      <div class="faq-content">
-        <p>It's an extra layer of security requiring a second verification step, like a code sent to your phone, when logging in.</p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-header"><span>Why should I update my software?</span><i class="fas fa-chevron-down"></i></div>
-      <div class="faq-content">
-        <p>Updates often include security patches that fix vulnerabilities hackers can exploit.</p>
-      </div>
-    </div>
+  <div style="margin-bottom:20px;">
+    <h3>Q3: Dear Wellbeing Wiz, I find it hard to sleep because I’m glued to my devices at night. Any tips?</h3>
+    <p>Hi! Establish a tech-free hour before bed. Use blue light filters and create a relaxing bedtime routine to improve your sleep quality.</p>
   </div>
 </section>
 
-<section id="quiz" class="fade-in">
-  <h2>Test Your Cybersecurity Knowledge</h2>
-  <div class="quiz-container">
-    <div class="quiz-question" id="question">What is the best way to create a strong password?</div>
-    <div class="quiz-options">
-      <div class="quiz-option" data-answer="correct">Use a mix of letters, numbers, and symbols</div>
-      <div class="quiz-option" data-answer="incorrect">Use your birthdate or simple words</div>
-      <div class="quiz-option" data-answer="incorrect">Use the same password everywhere</div>
-      <div class="quiz-option" data-answer="incorrect">Write it down on paper and keep it under your keyboard</div>
-    </div>
-    <button id="nextQuestion" style="margin-top:20px; display:none;">Next Question</button>
+<!-- Page 4: Creative Corner -->
+<section id="creative">
+  <h2>Creative Corner: Digital Wellbeing Comic</h2>
+  <p>Here's a short comic strip about a teen who struggles with screen overload and finds a healthy balance using simple tips.</p>
+  <div style="text-align:center;">
+    <img src="https://images.unsplash.com/photo-1617419118740-4d5f6310ba86" alt="Comic Illustration" width="300" style="border-radius:10px;"/>
+    <p style="margin-top:10px;">*(Imagine a fun comic here showing a character turning off notifications, taking a walk, and feeling happier!)*</p>
   </div>
+  <p>Creativity and mindfulness can help you manage your digital habits better!</p>
 </section>
 
-<section id="resources" class="fade-in">
-  <h2>Additional Resources</h2>
-  <div class="resource-card">
-    <div class="resource-title">Cybersecurity Articles</div>
-    <p>Stay informed about the latest threats and best practices.</p>
-    <a href="https://www.kaspersky.com/resource-center" class="resource-link" target="_blank">Read Articles</a>
+<!-- Page 5: Personal Reflection -->
+<section id="reflection">
+  <h2>My Personal Reflection</h2>
+  <div style="margin-bottom:20px;">
+    <h3>What’s one thing I’ve learned about digital wellbeing?</h3>
+    <p>I’ve learned that setting boundaries and taking breaks from screens can significantly improve my mood and focus.</p>
   </div>
-  <div class="resource-card">
-    <div class="resource-title">Workshops & Webinars</div>
-    <p>Join live sessions to learn from experts.</p>
-    <a href="https://cybersecurityworks.com/" class="resource-link" target="_blank">Upcoming Events</a>
+  <div style="margin-bottom:20px;">
+    <h3>What’s one digital habit I’d like to improve or change?</h3>
+    <p>I want to reduce my late-night screen time and avoid scrolling before bed.</p>
   </div>
-  <div class="resource-card">
-    <div class="resource-title">Online Courses</div>
-    <p>Deepen your knowledge with structured lessons.</p>
-    <a href="https://www.coursera.org/courses?query=cybersecurity" class="resource-link" target="_blank">Browse Courses</a>
+  <div style="margin-bottom:20px;">
+    <h3>How could this change benefit my health and wellbeing?</h3>
+    <p>It would help me sleep better, feel less anxious, and have more energy during the day.</p>
   </div>
-</section>
-
-<section id="reflections" class="fade-in">
-  <h2>My Online Safety & Security Reflection</h2>
-  <h3>What I’ve learned?</h3>
-  <p>I now understand the importance of strong passwords, privacy management, and using security tools to stay protected online.</p>
-  <h3>What will I improve?</h3>
-  <p>I plan to enable two-factor authentication on my accounts, review privacy settings regularly, and stay informed about threats.</p>
-  <h3>How will this help me?</h3>
-  <p>Staying vigilant and informed helps me protect my personal data, avoid scams, and enjoy a safer digital experience.</p>
 </section>
 
 <!-- Footer -->
 <footer>
-  <p>&copy; 2024 CyberSecure. All rights reserved.</p>
+  <p>&copy; 2024 Balance & Wellbeing. All rights reserved.</p>
 </footer>
 
-<!-- Scripts -->
+<!-- JavaScript: Navigation and interaction -->
 <script>
-
-// Navigation Logic
+// Navigation
 const navButtons = document.querySelectorAll('nav button');
 const sections = document.querySelectorAll('section');
 
 navButtons.forEach(btn => {
   btn.addEventListener('click', () => {
-    const target = btn.getAttribute('data-section');
+    const target = btn.dataset.section;
     sections.forEach(sec => {
       if (sec.id === target) {
-        sec.classList.add('active', 'fade-in');
-        setTimeout(() => sec.classList.remove('fade-in'), 1000);
+        sec.classList.add('active');
       } else {
         sec.classList.remove('active');
       }
     });
   });
 });
-
-// Scroll to Top Button
-const scrollBtn = document.getElementById('scrollTopBtn');
-
-window.onscroll = () => {
-  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-    scrollBtn.style.display = 'block';
-  } else {
-    scrollBtn.style.display = 'none';
-  }
-};
-
-scrollBtn.onclick = () => {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-};
-
-// FAQ Accordion Logic
-const faqItems = document.querySelectorAll('.faq-item');
-
-faqItems.forEach(item => {
-  const header = item.querySelector('.faq-header');
-  header.onclick = () => {
-    item.classList.toggle('faq-active');
-    const icon = header.querySelector('i');
-    if (item.classList.contains('faq-active')) {
-      icon.classList.remove('fa-chevron-down');
-      icon.classList.add('fa-chevron-up');
-    } else {
-      icon.classList.remove('fa-chevron-up');
-      icon.classList.add('fa-chevron-down');
-    }
-  }
-});
-
-// Quiz Interaction
-const quizOptions = document.querySelectorAll('.quiz-option');
-const nextBtn = document.getElementById('nextQuestion');
-let quizStep = 0;
-
-quizOptions.forEach(option => {
-  option.onclick = () => {
-    // Remove previous selection styles
-    quizOptions.forEach(opt => {
-      opt.classList.remove('correct', 'incorrect');
-    });
-    // Mark answer
-    if (option.getAttribute('data-answer') === 'correct') {
-      option.classList.add('correct');
-    } else {
-      option.classList.add('incorrect');
-    }
-    nextBtn.style.display = 'block';
-  }
-});
-
-nextBtn.onclick = () => {
-  // For simplicity, show alert or move to next question
-  alert('This quiz is a sample; add more questions to expand.');
-  // Reset quiz for now
-  quizOptions.forEach(opt => opt.classList.remove('correct', 'incorrect'));
-  nextBtn.style.display = 'none';
-};
-
-// Optional: Add more interactive questions, expand quiz, and resource sections to make it longer
-
 </script>
+
 </body>
 </html>
