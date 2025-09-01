@@ -231,21 +231,52 @@ footer {
 
 <!-- Page 3: Advice Column -->
 <section id="advice">
-  <h2>Ask the Cyber Safety Expert!</h2>
+  <h2>Ask the Cyber Guardian!</h2>
+  
   <div style="margin-bottom:20px;">
-    <h3>Q1: How can I create a strong password?</h3>
-    <p>Use a mix of uppercase and lowercase letters, numbers, and symbols. Avoid common words or easy-to-guess info. Consider using a password manager to keep track of your passwords.</p>
+    <h3>Hey Cyber Guardian, I keep getting friend requests from strangers—should I accept or ignore?</h3>
+    <p>Great question! Think of your online circle like your real-life friends—only invite people you trust. Check their profiles for mutual friends, consistent info, and genuine posts. If something feels off or unfamiliar, it's safest to ignore or block. Keeping your privacy settings tight and only connecting with people you know helps keep your digital space safe and cozy.</p>
   </div>
+  
   <div style="margin-bottom:20px;">
-    <h3>Q2: How do I recognize a phishing email?</h3>
-    <p>Look for suspicious sender addresses, spelling mistakes, and urgent language asking for personal info. Never click on unknown links or download attachments from untrusted sources.</p>
+    <h3>I received an email asking for my personal details. How can I tell if it's a scam or legit?</h3>
+    <p>Good eye! Phishing emails often sound urgent or threaten trouble if you don’t act fast. Look at the sender’s email carefully—scammers often use addresses that look similar but aren’t quite right. Never click suspicious links or share personal info. When in doubt, go directly to the company's official website or contact their customer support to verify if it’s real.</p>
   </div>
+  
   <div style="margin-bottom:20px;">
-    <h3>Q3: What's the best way to keep my Wi-Fi secure?</h3>
-    <p>Change default passwords, use WPA3 encryption, and hide your network SSID. Regularly update your router firmware and avoid sharing your Wi-Fi password publicly.</p>
+    <h3>What’s one easy way to protect my online accounts from hackers?</h3>
+    <p>Smart move! Use strong, unique passwords for each account—like locking each door with a different key. Consider using a password manager to keep track. Turn on two-factor authentication whenever possible, so even if someone guesses your password, they still need a second code to get in. Also, review your privacy settings regularly and be cautious about sharing personal details—less is more when it comes to your info online.</p>
   </div>
+  
+  <!-- User message form -->
+  <h3>Leave Your Question or Message</h3>
+  <form style="margin-top:20px; display:flex; flex-direction:column; max-width:500px; gap:10px;" onsubmit="return handleFormSubmit(event)">
+    <input type="text" id="name" placeholder="Your Name" required style="padding:10px; border-radius:5px; border:none;"/>
+    <input type="email" id="email" placeholder="Your Email" required style="padding:10px; border-radius:5px; border:none;"/>
+    <textarea id="message" rows="4" placeholder="Your Message" required style="padding:10px; border-radius:5px; border:none;"></textarea>
+    <button type="submit" style="padding:10px; border:none; border-radius:5px; background-color:#00ffe3; font-weight:bold; cursor:pointer;">Send Message</button>
+  </form>
+  <p id="formResponse" style="margin-top:10px; color:#00ffe3; font-weight:bold;"></p>
 </section>
 
+<script>
+function handleFormSubmit(event) {
+  event.preventDefault(); // prevent actual form submission
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const message = document.getElementById('message').value.trim();
+
+  if (name && email && message) {
+    // Here you would normally send the data to your server
+    // For demo purposes, just show a thank you message
+    document.getElementById('formResponse').textContent = `Thank you, ${name}! Your message has been received.`;
+    // Reset form
+    document.querySelector('form').reset();
+  } else {
+    document.getElementById('formResponse').textContent = 'Please fill out all fields.';
+  }
+}
+</script>
 <!-- Page 4: Creative Corner -->
 <section id="creative">
   <h2>Creative Corner: Cyber Safety Comic</h2>
